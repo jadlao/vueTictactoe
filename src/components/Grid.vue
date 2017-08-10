@@ -82,8 +82,6 @@
                 if(this.gameStatus === 'win'){
                     this.gameStatusColor = 'statusWin'
 
-                    this.gameStatusMessage = '${this.activePlayer} Wins !'
-
                     return
                 }else if(this.gameStatus === 'draw'){
                     this.gameStatusColor = 'statusDraw'
@@ -93,7 +91,7 @@
                     return
                 }
 
-                this.gameStatusMessage = "${this.activePlayer}'s turn"
+                    this.gameStatusMessage = `${this.activePlayer}'s turn`
             }
         },
 
@@ -117,7 +115,7 @@
                     }
                 }
 
-            return false
+                return false
             },
 
             gameIsWon(){
@@ -125,7 +123,7 @@
                 Event.$emit('win', this.activePlayer)
                     
                 // sets game status message
-                this.gameStatusMessage = '${this.activePlayer} Wins!'
+                this.gameStatusMessage = `${this.activePlayer} Wins!`
 
                 // fires event for the Cell to freeze
                 Event.$emit('freeze')
